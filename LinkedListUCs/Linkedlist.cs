@@ -49,5 +49,12 @@ namespace LinkedListUCs
                 }
             }
         }
+        public void AddAtfirst(int data)
+        {
+            Node newNode1 = new Node(data);
+            newNode1 = head;
+            head = newNode1;
+            Console.WriteLine("{0} is added" + newNode1.data);
+        }
     }
 }
