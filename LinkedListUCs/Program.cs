@@ -12,7 +12,7 @@ namespace LinkedListUCs
         {
             Console.WriteLine("Welcome to the Linked List");
             Console.WriteLine("Enter a program number given below");
-            Console.WriteLine("1:- Linked List\n" + "2:- Custom Linked Listed\n" +"3:- Linked List U 3\n" + "4:- Insert Node\n" + "5:- Deletion of Node\n" );
+            Console.WriteLine("1:- Linked List\n" + "2:- Custom Linked Listed\n" +"3:- Linked List U 3\n" + "4:- Insert Node\n" + "5:- Deletion of Node\n" + "6:- Deletion in Last Node" );
             int input = Convert.ToInt32(Console.ReadLine());
             switch (input)
             {
@@ -57,6 +57,16 @@ namespace LinkedListUCs
                     num4.Display();
                     num4.DeleteFirstNode(56);
                     num4.Display();
+                    break;
+
+                case 6:
+                    LinkedList num5 = new LinkedList();
+                    num5.Addlast(56);
+                    num5.Addlast(30);
+                    num5.Addlast(70);
+                    num5.Display();
+                    num5.DeleteLastNode(56);
+                    num5.Display();
                     break;
 
             }
