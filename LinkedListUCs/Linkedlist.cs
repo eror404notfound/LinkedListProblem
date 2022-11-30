@@ -27,12 +27,13 @@ namespace LinkedListUCs
                 }
                 temp.next = newNode;
             }
-            Console.WriteLine("{0} is inserted in to Linked list", newNode.data);
+            Console.WriteLine("{0} is inserted in to Linked list Last position", newNode.data);
         }
         public void Display()
         {
             Console.WriteLine("Display of Nodes");
             Node temp = this.head;
+            int pos = 1;
             if (temp == null)
             {
                 Console.WriteLine("LinkedList is Empty");
@@ -42,7 +43,7 @@ namespace LinkedListUCs
             {
                 while (temp != null)
                 {
-                    Console.Write("" + temp.data + " ");
+                    Console.WriteLine("position :" + pos + "Data" + temp.data + "\n");
                     temp = temp.next;
                 }
             }
@@ -52,7 +53,27 @@ namespace LinkedListUCs
             Node newNode1 = new Node(data);//creating new node and passsing data
             newNode1.next = head;
             head = newNode1;
-            Console.WriteLine("{0} is added at first position ", newNode1.data);
+            Console.WriteLine("{0} is inserted to the Linked List at first position ", newNode1.data);
+        }
+
+        internal void InsertBetween(int previous, int data, int after) //calling the method 
+        {
+            Node temp = head;
+            Node newNode = new Node(data);
+            Node store;
+            while(temp != null)
+            {
+                if(temp.data == previous && temp.next.data == after)
+                {
+                    store = temp.next;
+                    temp.next.next = newNode;
+                    newNode = store;
+                }
+                else
+                {
+                    temp = temp.next;
+                }
+            }
         }
     }
 }
