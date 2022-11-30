@@ -12,17 +12,16 @@ namespace LinkedListUCs
         internal Node head;
         internal void Addlast(int data)
         {
-            Node newNode = new Node(data); // creating the new node Passing the data
+            Node newNode = new Node(data);//creating new node and passsing data
 
-            if (this.head == null) // if this is null than it will start the new node.
+            if (this.head == null)
             {
                 this.head = newNode;
-
             }
             else
             {
                 Node temp = head;
-                while (temp.next != null) // if this note is not equal to null that it will print the data.
+                while (temp.next != null)
                 {
                     temp = temp.next;
                 }
@@ -45,16 +44,15 @@ namespace LinkedListUCs
                 {
                     Console.Write("" + temp.data + " ");
                     temp = temp.next;
-
                 }
             }
         }
         public void AddAtfirst(int data)
         {
-            Node newNode1 = new Node(data);
-            newNode1 = head;
+            Node newNode1 = new Node(data);//creating new node and passsing data
+            newNode1.next = head;
             head = newNode1;
-            Console.WriteLine("{0} is added" + newNode1.data);
+            Console.WriteLine("{0} is added at first position ", newNode1.data);
         }
     }
 }
